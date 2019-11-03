@@ -1,0 +1,25 @@
+.createWorkout-block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.createWorkout-block input {
+  background: #698086;
+  border: 0;
+  padding: 10px;
+  color: #fff;
+}
+
+.createWorkout-block input::placeholder {
+  color: #fff;
+  font-weight: 700;
+}
+
+.createWorkout-block button {
+  border: 0;
+  padding: 10px;
+  background: #698086;
+  color: #fff;
+  font-weight: 900;
+}

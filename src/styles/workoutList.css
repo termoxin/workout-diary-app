@@ -1,0 +1,7 @@
+.workout-list {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  margin-top: 25px;
+  width: 100%;
+}
