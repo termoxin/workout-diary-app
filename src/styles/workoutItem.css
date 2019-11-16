@@ -18,7 +18,9 @@ li {
 }
 
 .workout-item span {
-  width: 30%;
+  display: flex;
+  justify-content: center;
+  width: 25%;
 }
 
 .workout-item span:last-child {
@@ -26,9 +28,19 @@ li {
   text-align: right;
 }
 
+span.workout-item__date {
+  width: 35%;
+}
+
 .workout-item .cross {
   font-size: 20px;
+  justify-content: flex-end;
   cursor: pointer;
   font-weight: 900;
   color: #f24352;
+}
+
+span.workout-item__name {
+  justify-content: flex-start;
+  width: 40%;
 }
