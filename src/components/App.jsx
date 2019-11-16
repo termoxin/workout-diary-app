@@ -18,13 +18,25 @@ const App = () => {
     setExercises(newState);
   };
 
+  const deleteItemHandler = id => {
+    const newExercises = exercises.filter(ex => ex.id !== id);
+    setExercises(newExercises);
+  };
+
   return (
     <div className="container">
       <Header />
       <CreateWorkoutBlock onCreateWorkout={createWorkoutSession} />
       <WorkoutList>
         {exercises.map(({ id, name, reps, date }) => (
-          <WorkoutItem key={id} name={name} reps={reps} date={date} />
+          <WorkoutItem
+            key={id}
+            id={id}
+            name={name}
+            reps={reps}
+            date={date}
+            onDelete={deleteItemHandler}
+          />
         ))}
       </WorkoutList>
     </div>

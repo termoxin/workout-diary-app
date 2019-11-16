@@ -2,8 +2,8 @@ import React from "react";
 
 import "../../styles/workoutItem.css";
 
-const WorkoutItem = ({ name, reps, date }) => (
-  <li>
+const WorkoutItem = ({ name, reps, id, date, onDelete }) => (
+  <li onClick={() => onDelete(id)}>
     <div className="workout-item">
       <span className="workout-item__name">{name}</span>
       <span className="workout-item__count">{reps} reps</span>
