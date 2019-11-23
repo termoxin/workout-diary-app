@@ -23,6 +23,22 @@ const App = () => {
     setExercises(newExercises);
   };
 
+  const calculateProgress = (name, id) => {
+    const currentExercises = exercises.filter(
+      exercise => exercise.name === name
+    );
+
+    const index = currentExercises.findIndex(e => e.id === id);
+
+    if (index) {
+      const previousExercise = currentExercises[index - 1];
+      const currentExercise = currentExercises[index];
+      const repsImprovements = currentExercise.reps - previousExercise.reps;
+
+      return Math.round((+repsImprovements / +previousExercise.reps) * 100);
+    }
+  };
+
   return (
     <div className="container">
       <Header />
@@ -33,6 +49,7 @@ const App = () => {
             key={id}
             id={id}
             name={name}
+            progress={calculateProgress(name, id)}
             reps={reps}
             date={date}
             onDelete={deleteItemHandler}
